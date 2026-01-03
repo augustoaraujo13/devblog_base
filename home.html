@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBlog | Python & Django 2026</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="light-theme">
+
+    <header>
+        <div class="container nav-wrapper">
+            <h1 class="logo">Dev<span>Blog</span></h1>
+            
+            <button class="mobile-menu-icon" id="mobile-menu-btn" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#recentes">Posts</a></li>
+                    <li><a href="#social-section">Redes Sociais</a></li>
+                    <li><a href="#about-section">Sobre</a></li>
+                    <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
+                </ul>
+            </nav>
+
+            <div class="header-right-desktop">
+                <div class="search-box">
+                    <input type="text" placeholder="Pesquisar..." id="search-input">
+                    <button id="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="top-content">
+            <h2 class="section-title">🔥 Em Alta</h2>
+            <div class="carousel">
+                <div class="carousel-inner" id="carousel-track">
+                    <div class="carousel-item active">
+                        <img src="https://picsum.photos/id/20/1200/500" alt="Django">
+                        <div class="carousel-caption">
+                            <span class="tag">Destaque</span>
+                            <h3>Escalando com Django e SQLite</h3>
+                            <p>Técnicas essenciais para performance em 2026.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://picsum.photos/id/30/1200/500" alt="CSS Grid">
+                        <div class="carousel-caption">
+                            <span class="tag">Tutorial</span>
+                            <h3>CSS Grid de Alto Nível</h3>
+                            <p>Layouts responsivos sem complicações.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control prev" onclick="moveSlide(-1)">❮</button>
+                <button class="carousel-control next" onclick="moveSlide(1)">❯</button>
+            </div>
+        </section>
+
+        <section id="recentes" class="posts-section">
+            <h2 class="section-title">📅 Posts Recentes</h2>
+            <div class="posts-grid">
+                <article class="recent-card">
+                    <img src="https://picsum.photos/id/1/400/250" alt="Post">
+                    <div class="recent-info">
+                        <span class="category">Backend</span>
+                        <h3>Segurança em APIs Python</h3>
+                        <p>Proteja seus dados contra ataques modernos.</p>
+                        <a href="#" class="read-link">Ler mais →</a>
+                    </div>
+                </article>
+                <article class="recent-card">
+                    <img src="https://picsum.photos/id/60/400/250" alt="Post">
+                    <div class="recent-info">
+                        <span class="category">Design</span>
+                        <h3>Acessibilidade no Dark Mode</h3>
+                        <p>Como escolher contrastes confortáveis.</p>
+                        <a href="#" class="read-link">Ler mais →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about-section" class="about-container">
+            <h2 class="section-title">👤 Sobre o Autor</h2>
+            <div class="about-card">
+                <div class="author-profile">
+                    <div class="photo-frame">
+                        <img src="https://via.placeholder.com/150" alt="Autor">
+                    </div>
+                    <h3>Seu Nome</h3>
+                    <p class="author-title">Dev Full Stack</p>
+                </div>
+                <div class="author-bio">
+                    <p>Apaixonado por resolver problemas complexos com código simples.</p>
+                    <p>Especialista em ecossistema Python e arquiteturas de front-end modernas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer" id="social-section">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about">
+                    <h2 class="logo">Dev<span>Blog</span></h2>
+                    <p>Compartilhando conhecimento técnico para a nova geração de desenvolvedores.</p>
+                    <div class="social-links-v2">
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">GH</a>
+                        <a href="#" class="social-icon">IN</a>
+                    </div>
+                </div>
+                <div class="footer-col links">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#recentes">Posts</a></li>
+                        <li><a href="#about-section">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter">
+                    <h3>Newsletter</h3>
+                    <form class="footer-form">
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <button type="submit">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; 2026 DevBlog. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>

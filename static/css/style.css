@@ -1,0 +1,71 @@
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --header-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --primary: #2d6a4f;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body.dark-theme {
+    --bg: #121212 !important;
+    --text: #e0e0e0 !important;
+    --header-bg: #1f1f1f !important;
+    --card-bg: #1e1e1e !important;
+    --shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; transition: background 0.3s, color 0.3s; line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* HEADER */
+header { background: var(--header-bg); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow); }
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 600; }
+.theme-btn { background: none; border: 1px solid var(--primary); border-radius: 50%; padding: 5px; cursor: pointer; font-size: 1.2rem; }
+
+/* CARROSSEL */
+.carousel { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 15px; margin: 20px 0; }
+.carousel-inner { display: flex; transition: transform 0.5s ease; height: 100%; }
+.carousel-item { min-width: 100%; position: relative; }
+.carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+.carousel-caption { position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; width: 100%; padding: 30px; }
+.carousel-control { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: white; border: none; padding: 15px; cursor: pointer; border-radius: 50%; z-index: 10; }
+.next { right: 10px; } .prev { left: 10px; }
+
+/* GRID & ABOUT */
+.section-title { margin: 40px 0 20px; border-left: 5px solid var(--primary); padding-left: 15px; }
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+.recent-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.about-card { display: flex; background: var(--card-bg); border-radius: 15px; box-shadow: var(--shadow); overflow: hidden; }
+.author-profile { flex: 1; background: var(--primary); color: white; padding: 30px; text-align: center; }
+.photo-frame { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto 15px; border: 3px solid white; }
+.author-bio { flex: 2; padding: 30px; }
+
+/* FOOTER */
+.main-footer { background: var(--header-bg); padding: 60px 0 0; border-top: 2px solid var(--primary); margin-top: 50px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 40px; padding-bottom: 40px; }
+.social-icon { display: inline-block; width: 35px; height: 35px; background: var(--bg); text-align: center; line-height: 35px; border-radius: 50%; color: var(--primary); text-decoration: none; margin-right: 10px; box-shadow: var(--shadow); }
+.footer-form { display: flex; flex-direction: column; gap: 10px; }
+.footer-form input { padding: 10px; border-radius: 5px; border: 1px solid #ccc; background: var(--bg); color: var(--text); }
+.footer-form button { padding: 10px; background: var(--primary); color: white; border: none; cursor: pointer; border-radius: 5px; }
+.footer-bottom { background: rgba(0,0,0,0.05); padding: 20px 0; text-align: center; font-size: 0.8rem; }
+
+/* MOBILE */
+.mobile-menu-icon { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; }
+.mobile-menu-icon span { width: 25px; height: 3px; background: var(--text); transition: 0.3s; }
+
+@media (max-width: 768px) {
+    .mobile-menu-icon { display: flex !important; z-index: 10000; position: relative; }
+    #nav-menu { position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: var(--header-bg); display: flex !important; flex-direction: column; align-items: center; justify-content: center; transition: 0.4s; z-index: 9999; box-shadow: -10px 0 20px rgba(0,0,0,0.3); }
+    #nav-menu.active { right: 0 !important; }
+    .nav-links { flex-direction: column; gap: 30px; }
+    .nav-links a { font-size: 1.5rem; }
+    .header-right-desktop, .author-profile { display: none; }
+    .about-card { flex-direction: column; }
+    .footer-grid { grid-template-columns: 1fr; }
+}
